@@ -4,6 +4,10 @@
 
 Job Dashboard is a comprehensive web application built with Next.js. It provides an interactive interface for managing job postings and tracking applicant details. The application features various sections including a private job board, real-time statistics, AI-based credits, recent job postings, and applicant information.
 
+**Preview the Project**
+
+https://jobs-dashboard-psi.vercel.app
+
 ## Features
 
 - **Private Job Board:** Manage and view job postings in a secure, private environment.
