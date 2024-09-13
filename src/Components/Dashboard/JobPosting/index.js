@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import styles from "@/Components/Dashboard/LatestCandidates/styles.module.scss";
+import sty from "./styles.module.scss";
 import { Chart, registerables } from "chart.js";
 
 // Register chart.js components globally, so it only happens once
 Chart.register(...registerables);
 
-const JobPosting = () => {
+const JobPosting = ({ recentJobOpenings }) => {
   const chartRef = useRef(null); // Keep track of the DOM element
   const chartInstanceRef = useRef(null); // Keep track of the Chart.js instance
 
@@ -21,24 +22,23 @@ const JobPosting = () => {
       chartInstanceRef.current = new Chart(ctx, {
         type: "bar",
         data: {
-          labels: ["Selected", "Waitlisted", "Rejected", "Not Appeared"],
+          labels: ["", "", ""],
           datasets: [
             {
-              data: [12, 9, 5, 3], // Sample data, can be updated with actual values
+              data: [75, 40, 110], // Sample data, can be updated with actual values
               backgroundColor: [
-                "rgba(214, 241, 220, 1)",
-                "rgba(255, 229, 193, 1)",
-                "rgba(255, 219, 212, 1)",
-                "rgba(219, 235, 255, 1)",
+                "rgb(128, 99, 206)",
+                "rgb(124, 161, 249)",
+                "rgb(144, 221, 251)",
               ],
               borderColor: [
-                "rgba(0, 135, 68, 1)",
-                "rgba(255, 167, 0, 1)",
-                "rgba(214, 45, 32, 1)",
-                "rgba(0, 87, 231, 1)",
+                "rgb(128, 99, 206)",
+                "rgb(124, 161, 249)",
+                "rgb(144, 221, 251)",
               ],
               borderWidth: 1,
               borderRadius: 10,
+              // minBarLength: 10,
             },
           ],
         },
@@ -53,6 +53,7 @@ const JobPosting = () => {
           scales: {
             x: {
               beginAtZero: true,
+              max: 150,
               ticks: {
                 stepSize: 5, // Set the gap between ticks to 5 units
               },
@@ -77,6 +78,40 @@ const JobPosting = () => {
       <h2>Your Job Postings</h2>
       <div style={{ marginTop: "10px" }}>
         <canvas ref={chartRef} id="interviewDecisionsChart"></canvas>
+      </div>
+      <div className={sty["footer"]}>
+        <div className={sty["container"]}>
+          <span
+            className={sty["red-dot"]}
+            style={{ background: "rgb(128, 99, 206)" }}
+          ></span>
+          <span className={sty["name"]}>
+            Private Equity-
+            <br />
+            Associate
+          </span>
+        </div>
+        <div className={sty["container"]}>
+          <span
+            className={sty["red-dot"]}
+            style={{ background: "rgb(124, 161, 249)" }}
+          ></span>
+          <span className={sty["name"]}>
+            Associate- <br />
+            Software Engineer
+          </span>
+        </div>
+        <div className={sty["container"]}>
+          <span
+            className={sty["red-dot"]}
+            style={{ background: "rgb(144, 221, 251)" }}
+          ></span>
+          <span className={sty["name"]}>
+            Frontend-
+            <br />
+            trainee
+          </span>
+        </div>
       </div>
     </div>
   );

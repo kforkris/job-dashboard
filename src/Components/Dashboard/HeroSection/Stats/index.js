@@ -2,7 +2,9 @@ import React from "react";
 import styles from "./styles.module.scss";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
-const Stats = () => {
+import CountUp from "react-countup";
+
+const Stats = ({ total_applicants = 0, ai_credits = 0, total_jobs = 0 }) => {
   return (
     <div className={styles.statCards}>
       <div className={styles.card}>
@@ -14,7 +16,9 @@ const Stats = () => {
             <WorkOutlineOutlinedIcon />
           </div>
           <div>
-            <h2>24</h2>
+            <h2>
+              <CountUp start={0} end={total_jobs || 0} duration={2} />
+            </h2>
             <h5>Total Jobs</h5>
           </div>
         </div>
@@ -26,7 +30,9 @@ const Stats = () => {
             <PeopleAltOutlinedIcon />
           </div>
           <div>
-            <h2>1500</h2>
+            <h2>
+              <CountUp start={0} end={total_applicants || 0} duration={2} />
+            </h2>
             <h5>Applicants</h5>
           </div>
         </div>
@@ -40,7 +46,9 @@ const Stats = () => {
             <WorkOutlineOutlinedIcon />
           </div>
           <div>
-            <h2>20,000</h2>
+            <h2>
+              <CountUp start={0} end={ai_credits || 0} duration={2} />
+            </h2>
             <h5>Ai credits</h5>
           </div>
         </div>
