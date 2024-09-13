@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <div className={styles.nav}>
       <div className={styles.logo}>
-        <h2>Onefinnet</h2>
+        <h2>Onefinet</h2>
       </div>
       <div className={styles.navAction}>
         <div>
