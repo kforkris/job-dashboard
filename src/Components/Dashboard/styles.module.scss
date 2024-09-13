@@ -1,0 +1,12 @@
+.container {
+  display: flex;
+  margin-right: 30px;
+  justify-content: space-between;
+  align-items: stretch;
+  transition: left 0.3s ease;
+
+  .dashboard {
+    width: 80%;
+    margin-top: 40px;
+  }
+}
