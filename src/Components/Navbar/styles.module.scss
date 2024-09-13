@@ -24,6 +24,16 @@
     gap: 25px;
     align-items: center;
     padding-right: 30px;
+    input {
+      border: none;
+      padding: "4px";
+    }
+
+    input::placeholder {
+        font-size: 14px;
+        font-weight: 500;
+        color: black;
+      }
     svg {
       width: 20px;
       cursor: pointer;

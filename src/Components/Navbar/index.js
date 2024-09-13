@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className={styles.navAction}>
         <div>
           <SearchIcon />
-          <h4>Start Searching</h4>
+          <input placeholder="Start searching" />
         </div>
         <NotificationsNoneOutlinedIcon />
         <SettingsOutlinedIcon />

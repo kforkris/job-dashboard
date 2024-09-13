@@ -30,7 +30,7 @@ const HeroSection = () => {
     <div className={styles.heroSectionContainer}>
       <div className={styles.heroSection}>
         <div className={styles.heroHeading}>
-          <h3>Welcome back, Lewis</h3>
+          <h3>Welcome back, Krishna</h3>
           <p>
             Here’s whats changed in your talent hunt journey! You can evaluate
             candidates, attract job seekers, and redefine the candidate
